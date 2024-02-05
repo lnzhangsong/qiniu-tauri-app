@@ -3,3 +3,5 @@
 /target/
 /gen/
 .env
+.cargo
+capabilities
