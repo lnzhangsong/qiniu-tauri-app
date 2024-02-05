@@ -24,6 +24,9 @@ qiniu-sdk = { version = "0.2.4", features = ["objects"] }
 serde = "1.0.196"
 dotenvy = "0.15.7"
 dotenvy_macro = "0.15.7"
+aws-config = { version = "1.1.4", features = ["behavior-version-latest"] }
+aws-sdk-s3 = "1.14.0"
+tokio = { version = "1", features = ["full"] }
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem
