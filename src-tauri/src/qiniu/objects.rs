@@ -19,8 +19,8 @@ impl Serialize for File {
 }
 
 #[tauri::command]
-pub fn hello() -> Vec<File> {
-    let mut qiniuenv = QiniuEnv::new("".to_string(), "".to_string(), "".to_string());
+pub fn get_all_files() -> Vec<File> {
+    let qiniuenv;
 
     match QiniuEnv::qiniu_env() {
         Err(err) => {
@@ -30,9 +30,7 @@ pub fn hello() -> Vec<File> {
             }];
         }
         Ok(env) => {
-            qiniuenv.access_key = env.access_key;
-            qiniuenv.bucket_name = env.bucket_name;
-            qiniuenv.secret_key = env.secret_key;
+            qiniuenv = env;
         }
     }
 
